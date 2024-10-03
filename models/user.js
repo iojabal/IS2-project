@@ -23,10 +23,14 @@ const User = {
 
     updateUser: (userData, callback) => {
         //some code 
+        const query = "UPDATE user SET user = ?, name = ?, lastname = ?, email = ? password = ? WHERE id = ?";
+        db.query(query, [userData.user, userData.name, userData.lastname, userData.email, userData.passworf], callback);
     },
 
     deleteUser: (id, callback) => {
         //some code 
+        const query = "DELETE FROM user WHERE id = ?";
+        db.query(query, [id], callback);
     }
 }
 
